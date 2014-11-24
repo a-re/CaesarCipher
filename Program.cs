@@ -5,13 +5,13 @@ class Program
     static readonly char[] alpha = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
     static void Main(string[] args)
     {
-        Console.WriteLine(CeasarEncrypt("what m8", 1));
+        Console.WriteLine(CaesarEncrypt("hello", 2));
         Console.ReadKey();
     }
 
-    public static string CeasarEncrypt(string str, int rot)
+    public static string CaesarEncrypt(string str, int rot)
     {
-        char[] inStr = str.ToCharArray();
+        char[] inStr = str.ToLower().ToCharArray();
         char[] outC = new char[inStr.Length];
         Dictionary<char, int> dict = new Dictionary<char, int>();
         for (int x = 0; x < alpha.Length; x++) { dict.Add(alpha[x], x); }
