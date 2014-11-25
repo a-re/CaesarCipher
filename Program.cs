@@ -5,8 +5,20 @@ class Program
     static readonly char[] alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
     static void Main(string[] args)
     {
-        Console.WriteLine(CaesarEncrypt("Hello", 1));
+        Console.WriteLine(CaesarEncrypt("Caesar ciphers are fun", 1));
         Console.ReadKey();
+    }
+
+    /* A cool little hashing function that uses CaesarEncypt() */
+    public static string CaesarHash(string str)
+    {
+        Random r = new Random(); /* Not cryptographically secure! */
+        byte[] outBytes = new byte[256];
+        /* 16 rounds of hashing */
+        for (int x = 0; x < 16; x++)
+        {
+
+        }
     }
 
     public static string CaesarEncrypt(string str, int rot, bool? lower = null) /* A nullable boolean! */
